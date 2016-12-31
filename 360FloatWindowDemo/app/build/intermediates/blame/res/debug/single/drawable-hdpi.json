@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_big.png",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\drawable-hdpi\\bg_big.png"
+    },
+    {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_small.png",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\drawable-hdpi\\bg_small.png"
+    },
+    {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\toolbox.png",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\drawable-hdpi\\toolbox.png"
+    }
+]

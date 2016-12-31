@@ -1,0 +1,7 @@
+#Sat Dec 31 18:20:19 CST 2016
+base.0=D\:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e537b9c78d6156d930a31b7b19454a04276e10f0
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_02b2291d7a1f6baae0f02e02210ee8e79117f693\\classes.dex
+base.1=D\:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_02b2291d7a1f6baae0f02e02210ee8e79117f693
+file.0=D\:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e537b9c78d6156d930a31b7b19454a04276e10f0\\classes.dex
