@@ -1,4 +1,4 @@
-#Sat Dec 31 18:20:19 CST 2016
+#Sat Dec 31 23:58:18 CST 2016
 base.0=D\:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e537b9c78d6156d930a31b7b19454a04276e10f0
 renamed.1=classes.dex
 renamed.0=classes2.dex

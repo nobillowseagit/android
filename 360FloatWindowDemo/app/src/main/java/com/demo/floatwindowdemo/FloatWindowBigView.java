@@ -7,6 +7,10 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,17 +18,23 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 public class FloatWindowBigView extends LinearLayout {
 
+	private final MyBaiduTts mMyBaiduTts;
 	private GridView gridview;
 	private PackageManager pManager = null;
 	private List<PakageMod> datas = null;
 
 	private List<AppInfo> mlistAppInfo = null;
+	MyBaidu mBaidu = null;
 
 	/**
 	 * 记录大悬浮窗的宽度
@@ -52,8 +62,13 @@ public class FloatWindowBigView extends LinearLayout {
 				// 点击关闭悬浮窗的时候，移除所有悬浮窗，并停止Service
 				MyWindowManager.removeBigWindow(context);
 				MyWindowManager.removeSmallWindow(context);
+
+				mBaidu.close();
+				mBaidu.setAudio(false);
+
 				Intent intent = new Intent(getContext(), FloatWindowService.class);
 				context.stopService(intent);
+
 			}
 		});
 		back.setOnClickListener(new OnClickListener() {
@@ -62,12 +77,28 @@ public class FloatWindowBigView extends LinearLayout {
 				// 点击返回的时候，移除大悬浮窗，创建小悬浮窗
 				MyWindowManager.removeBigWindow(context);
 				MyWindowManager.createSmallWindow(context);
+				mBaidu.close();
+				mBaidu.setAudio(false);
 			}
 		});
 
 
+		mMyBaiduTts = new MyBaiduTts(context);
+
+		mBaidu = new MyBaidu(context, mHandler);
+		mBaidu.init();
+
+
+
+
 		gridview = (GridView) findViewById(R.id.gridview);
 		pManager = context.getPackageManager();
+
+
+		//Thread thread=new Thread(this);
+		//thread.start();
+		//mHandler.sendEmptyMessageDelayed(0, 1000);
+		DataChange.getInstance().addObserver(watcher);
 
 
 
@@ -158,7 +189,6 @@ public class FloatWindowBigView extends LinearLayout {
 	}
 
 
-
 	// 获得所有启动Activity的信息，类似于Launch界面
 	public void queryAppInfo() {
 		PackageManager pm = getContext().getPackageManager(); // 获得PackageManager对象
@@ -169,7 +199,7 @@ public class FloatWindowBigView extends LinearLayout {
 				.queryIntentActivities(mainIntent, PackageManager.MATCH_DEFAULT_ONLY);
 		// 调用系统排序 ， 根据name排序
 		// 该排序很重要，否则只能显示系统应用，而不能列出第三方应用程序
-		Collections.sort(resolveInfos,new ResolveInfo.DisplayNameComparator(pm));
+		Collections.sort(resolveInfos, new ResolveInfo.DisplayNameComparator(pm));
 		if (mlistAppInfo != null) {
 			mlistAppInfo.clear();
 			for (ResolveInfo reInfo : resolveInfos) {
@@ -195,5 +225,97 @@ public class FloatWindowBigView extends LinearLayout {
 	}
 
 
+	void baidu() {
+
+
+	}
+
+	class WorkThread extends Thread {
+		public Handler mHandler;
+
+		public void run() {
+			Looper.prepare();
+
+			mHandler = new Handler() {
+				public void handleMessage(Message msg) {
+					// 处理收到的消息
+				}
+			};
+
+			Looper.loop();
+		}
+	}
+
+	Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+				case 0:
+					//更新你相应的UI
+					mHandler.sendEmptyMessageDelayed(0, 1000);
+					break;
+				case 1:
+					break;
+			}
+		}
+	};
+
+
+	public void run() {
+		Log.e("ok", "111111111");
+		// TODO Auto-generated method stub
+		Message message = new Message();
+		message.what = 1;
+		String str = mBaidu.get();
+		if (str != null) {
+			mBaidu.set();
+		}
+		mHandler.sendMessage(message);
+	}
+
+
+
+	private DataWatcher watcher = new DataWatcher() {
+
+		@Override
+		public void update(Observable observable, Object data) {
+			super.update(observable, data);
+			//观察者接受到被观察者的通知，来更新自己的数据操作。
+			Data mData = (Data)data;
+			Log.i("Test", "mData---->>"+mData.getDataChange());
+
+			int code = mData.getDataChange();
+
+			if (code == 0) {
+				String str = mBaidu.get();
+				mBaidu.set();
+				int cnt = mlistAppInfo.size();
+				int i;
+				for (i = 0; i < cnt; i++) {
+					if (mlistAppInfo.get(i).getAppLabel().equals(str)) {
+						Intent intent = mlistAppInfo.get(i).getIntent();
+
+						//如果context是Application或者Application的context则要加上intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						getContext().startActivity(intent);
+						break;
+
+					}
+				}
+			} else if (code == 1) {
+
+				String str_p = (String)mData.getParam();
+
+				//获取系统当前日历时间
+				SimpleDateFormat   formatter   =   new SimpleDateFormat("yyyy年MM月dd日   HH:mm:ss");
+				Date curDate =  new Date(System.currentTimeMillis());
+				String   str   =   formatter.format(curDate);
+				mMyBaiduTts.speakText("北京时间" + str);
+			}
+
+
+		}
+
+	};
 
 }

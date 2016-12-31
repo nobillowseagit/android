@@ -5,33 +5,39 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="156995246757662"
+    timestamp="179548006074345"
     token="-8450792176801855937"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="131" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="965" />
+        duration="0" />
     <task
         name="verifier"
-        duration="22" />
-
-    <artifact
-        location="D:\github\toolbox\android\360FloatWindowDemo\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        duration="0" />
 
     <build
-        timestamp="156995246757662"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="177277519716177"
+        verifier="JAVA_RESOURCES_CHANGED" >
         <artifact
             location="D:\github\toolbox\android\360FloatWindowDemo\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
+    <build
+        timestamp="179301067584575"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="179548006074345"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

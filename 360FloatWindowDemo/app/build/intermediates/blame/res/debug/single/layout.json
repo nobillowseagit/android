@@ -8,8 +8,16 @@
         "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\layout\\float_window_small.xml"
     },
     {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bdspeech_digital_layout.xml",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\layout\\bdspeech_digital_layout.xml"
+    },
+    {
         "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\my_panel.xml",
         "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\layout\\my_panel.xml"
+    },
+    {
+        "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bdspeech_suggestion_item.xml",
+        "source": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\src\\main\\res\\layout\\bdspeech_suggestion_item.xml"
     },
     {
         "merged": "D:\\github\\toolbox\\android\\360FloatWindowDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",

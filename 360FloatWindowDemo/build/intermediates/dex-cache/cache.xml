@@ -3,6 +3,24 @@
 
     <item
         is-multidex="true"
+        jar="D:\github\toolbox\android\360FloatWindowDemo\app\libs\com.baidu.tts_2.2.9.20161020_154fa02_release.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="23ec3c5bfb359fe9950bf23c0da3d6c3bbaabb77">
+        <dex dex="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\transforms\dex\debug\folders\1000\2\com.baidu.tts_2.2.9.20161020_154fa02_release_0973de35362187c25f369ee8d76c8f425501267b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\github\toolbox\android\360FloatWindowDemo\app\libs\VoiceRecognition-2.1.20.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f6f1c929343ec741b10a82084c33ea4bfa5c9306">
+        <dex dex="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\transforms\dex\debug\folders\1000\2\VoiceRecognition-2.1.20_8b49d302d53f675a0a43c3fef180440970a045e1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,11 +30,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\github\toolbox\android\360FloatWindowDemo\app\libs\galaxy-v2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="382fc20085522cd3758c7f500151a7c6ef6604d3">
+        <dex dex="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\transforms\dex\debug\folders\1000\2\galaxy-v2.0_791e10f5b5a1b5f4adfed24170e32bec1f9658d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="71e99a0943c1d696d83f5a0cdee1326fe32ef9cc">
+        sha1="9678aba62cac03b8eea6f4a6e7d2b1978359ff3c">
         <dex dex="D:\github\toolbox\android\360FloatWindowDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e537b9c78d6156d930a31b7b19454a04276e10f0\classes.dex" />
     </item>
     <item
